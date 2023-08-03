@@ -22,6 +22,8 @@ import PaymentHistory from "../pages/Dashboard/Student/PaymentHistory";
 import InstructorClasses from "../pages/Dashboard/Instructor/InstructorClasses";
 import AllInstructors from "../pages/Instructors/AllInstructors";
 import NotFoundPage from "../pages/Shared/NotFoundPage";
+import Problems from "../pages/Problems/Problems";
+import AddProblem from "../pages/AddProblem/AddProblem";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: "classes",
         element: <Classes></Classes>,
+      },
+      {
+        path: "problems",
+        element: <Problems></Problems>,
+      },
+      {
+        path: "addProblem",
+        element: <AddProblem></AddProblem>,
       },
       {
         path: "allInstructors",

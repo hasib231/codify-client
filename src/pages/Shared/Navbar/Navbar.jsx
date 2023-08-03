@@ -28,6 +28,12 @@ const Navbar = () => {
       <li>
         <Link to="/classes"> Classes</Link>
       </li>
+      <li>
+        <Link to="/problems"> Problems</Link>
+      </li>
+      <li>
+        <Link to="/addProblem">Add Problems</Link>
+      </li>
 
       {isAdmin && (
         <li>
