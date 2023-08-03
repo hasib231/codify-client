@@ -22,8 +22,10 @@ import PaymentHistory from "../pages/Dashboard/Student/PaymentHistory";
 import InstructorClasses from "../pages/Dashboard/Instructor/InstructorClasses";
 import AllInstructors from "../pages/Instructors/AllInstructors";
 import NotFoundPage from "../pages/Shared/NotFoundPage";
-import Problems from "../pages/Problems/Problems";
+import Problems2 from "../pages/Problems2/Problems";
 import AddProblem from "../pages/AddProblem/AddProblem";
+import Problems from "../pages/Problems/Problems";
+import SingleProblem from "../pages/Problems/SingleProblem";
 
 const router = createBrowserRouter([
   {
@@ -39,8 +41,18 @@ const router = createBrowserRouter([
         element: <Classes></Classes>,
       },
       {
+        path: "problems2",
+        element: <Problems2></Problems2>,
+      },
+      {
         path: "problems",
         element: <Problems></Problems>,
+      },
+      {
+        path: "singleProblem/:id",
+        element: <SingleProblem></SingleProblem>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/singleProblemData/${params.id}`),
       },
       {
         path: "addProblem",
@@ -154,9 +166,7 @@ const router = createBrowserRouter([
               </StudentRoute>
             ),
             loader: ({ params }) =>
-              fetch(
-                `https://summer-camp-school-server-side-hasib231.vercel.app/mySelectClass/${params.id}`
-              ),
+              fetch(`http://localhost:5000/mySelectClass/${params.id}`),
           },
         ],
       },

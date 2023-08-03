@@ -29,16 +29,13 @@ const SignUp = () => {
             role: "student",
             image: data.photoURL,
           };
-          fetch(
-            "https://summer-camp-school-server-side-hasib231.vercel.app/users",
-            {
-              method: "POST",
-              headers: {
-                "content-type": "application/json",
-              },
-              body: JSON.stringify(saveUser),
-            }
-          )
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveUser),
+          })
             .then((res) => res.json())
             .then((data) => {
               if (data.insertedId) {

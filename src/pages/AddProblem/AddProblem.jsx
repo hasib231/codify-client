@@ -15,29 +15,22 @@ const AddClass = () => {
     console.log("data",data);
     const formData = new FormData();
     console.log("formdata",formData);
-
-    fetch({
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then(() => {
            
-          axiosSecure.post("/class", newClass).then((data) => {
-            console.log("after posting new class", data.data);
+          axiosSecure.post("/addNewProblem", data).then((data) => {
+            console.log("after posting new problem", data.data);
             if (data.data.insertedId) {
               reset();
               Swal.fire({
                 position: "top-end",
                 icon: "success",
-                title: "New Class Added successfully",
+                title: "New Problem Added successfully",
                 showConfirmButton: false,
                 timer: 1500,
               });
             }
           });
         
-      });
+      
   };
 
   return (

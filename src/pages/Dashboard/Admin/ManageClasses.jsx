@@ -13,12 +13,9 @@ const ManageClasses = () => {
   });
 
   const handleMakeApprove = (classData) => {
-    fetch(
-      `https://summer-camp-school-server-side-hasib231.vercel.app/class/approve/${classData._id}`,
-      {
-        method: "PATCH",
-      }
-    )
+    fetch(`http://localhost:5000/class/approve/${classData._id}`, {
+      method: "PATCH",
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -35,12 +32,9 @@ const ManageClasses = () => {
       });
   };
   const handleMakeDeny = (classData) => {
-    fetch(
-      `https://summer-camp-school-server-side-hasib231.vercel.app/class/deny/${classData._id}`,
-      {
-        method: "PATCH",
-      }
-    )
+    fetch(`http://localhost:5000/class/deny/${classData._id}`, {
+      method: "PATCH",
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -22,16 +22,13 @@ const SingleClass = ({ item }) => {
         email: user.email,
         enrollStatus: "selected",
       };
-      fetch(
-        "https://summer-camp-school-server-side-hasib231.vercel.app/selectedClass",
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(classData),
-        }
-      )
+      fetch("http://localhost:5000/selectedClass", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(classData),
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {

@@ -1,61 +1,41 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
-const codeData = `
-        
- #include <iostream>
-using namespace std;
-
-int main() {
-    int n;
-    long factorial = 1.0;
-
-    cout << "Enter a positive integer: ";
-    cin >> n;
-
-    if (n < 0)
-        cout << "Error! Factorial of a negative number doesn't exist.";
-    else {
-        for(int i = 1; i <= n; ++i) {
-            factorial *= i;
-        }
-        cout << "Factorial of " << n << " = " << factorial;    
-    }
-
-    return 0;
-}
-
-      `;
-const options = {
-  method: "POST",
-  url: "https://online-code-compiler.p.rapidapi.com/v1/",
-  headers: {
-    "content-type": "application/json",
-    "X-RapidAPI-Key": "20296d590cmsh4389ffe30cea551p1dcd94jsn01cf70e6c68a",
-    "X-RapidAPI-Host": "online-code-compiler.p.rapidapi.com",
-  },
-  data: {
-    language: "cpp",
-    version: "latest",
-    code: `${codeData}`,
-    input: "4",
-  },
-};
 const Problems = () => {
-    const [outputData, setOutputData] = useState(null);
+    const [problemData, setProblemData] = useState([]);
+    
     useEffect(() => {
-        axios.request(options).then(function (response) {
-        setOutputData(response.data.output);
-        console.log(response.data);
-        }).catch(function (error) {
-        console.error(error);
-        })
-    },[])
-    return (
-      <div>
-        <h2>{outputData}</h2>
+      fetch("http://localhost:5000/allProblems")
+        .then((res) => res.json())
+          .then((data) => {
+              setProblemData(data);
+              console.log(data);
+        });
+    }, []);
+    
+  return (
+    <div className="">
+      <h2 className="text-5xl my-8 text-center">Select a problem to solve</h2>
+      <div className="overflow-x-auto w-full">
+        <table className="table w-8/12 table-zebra mx-auto">
+          {/* head */}
+          <tbody className="text-center">
+            {problemData.map((problem) => (
+              <tr>
+                <th>{problem.problemName}</th>
+
+                <th>
+                  <Link to={`/singleProblem/${problem._id}`}>
+                    <button className="btn my-btn">Solve now</button>
+                  </Link>
+                </th>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    );
+    </div>
+  );
 };
 
 export default Problems;
