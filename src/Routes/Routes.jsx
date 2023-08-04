@@ -22,7 +22,7 @@ import PaymentHistory from "../pages/Dashboard/Student/PaymentHistory";
 import InstructorClasses from "../pages/Dashboard/Instructor/InstructorClasses";
 import AllInstructors from "../pages/Instructors/AllInstructors";
 import NotFoundPage from "../pages/Shared/NotFoundPage";
-import Problems2 from "../pages/Problems2/Problems";
+import Problems2 from "../pages/Problems2/Problems2";
 import AddProblem from "../pages/AddProblem/AddProblem";
 import Problems from "../pages/Problems/Problems";
 import SingleProblem from "../pages/Problems/SingleProblem";
