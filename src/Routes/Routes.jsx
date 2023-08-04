@@ -50,13 +50,21 @@ const router = createBrowserRouter([
       },
       {
         path: "singleProblem/:id",
-        element: <SingleProblem></SingleProblem>,
+        element: (
+          <PrivateRoute>
+            <SingleProblem></SingleProblem>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/singleProblemData/${params.id}`),
       },
       {
         path: "addProblem",
-        element: <AddProblem></AddProblem>,
+        element: (
+          <PrivateRoute>
+            <AddProblem></AddProblem>
+          </PrivateRoute>
+        ),
       },
       {
         path: "allInstructors",

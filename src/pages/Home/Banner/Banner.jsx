@@ -9,7 +9,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Banner = () => {
     return (
-      <div>
+      <div >
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -27,21 +27,21 @@ const Banner = () => {
           <SwiperSlide>
             <img
               className="w-full"
-              src="https://img.freepik.com/free-psd/horizontal-banner-template-basketball-with-male-player_23-2149024716.jpg?w=1060&t=st=1686921799~exp=1686922399~hmac=ed90d61276b4a019a1d75a1e20455edc98a96ed6d5d56203284359e561fa48c0"
+              src="https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150062008.jpg?w=1380&t=st=1689041921~exp=1689042521~hmac=d8a5f9a905126b68366892416fbd1c3ddf2aa510236daf253e782cca3fafb872"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               className="w-full"
-              src="https://img.freepik.com/free-psd/horizontal-banner-template-basketball-with-male-player_23-2149024718.jpg?w=1060&t=st=1686922953~exp=1686923553~hmac=31270814460080a158bba5e17e4f11bb8a0541cc3b7a46c6ecbdadb72236d417"
+              src="https://img.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg?w=1380&t=st=1689042021~exp=1689042621~hmac=175a767f7fb1cbfe6381ff4a660c5d057ed2da5c42f0586b10ddfa0f00056acb"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               className="w-full "
-              src="https://img.freepik.com/free-psd/horizontal-banner-template-basketball-with-male-player_23-2149024720.jpg?w=1060&t=st=1686927370~exp=1686927970~hmac=54e9fffc67063c99064c91e50407ff58040fea2fe5d306de20fd88cefdeda9ea"
+              src="https://img.freepik.com/free-photo/html-system-website-concept_23-2150376760.jpg?w=1380&t=st=1689042101~exp=1689042701~hmac=a25a1db487189f453521c4c3718323c4b80873244fccecfb7a930cf7bcbfb5ef"
               alt=""
             />
           </SwiperSlide>

@@ -7,9 +7,9 @@ const Footer = () => {
         <div>
           <img src={logo} width="50" height="50" alt="" />
           <p>
-            Sports Club Ltd.
+            Codify Ltd.
             <br />
-            Best club for learn sports.
+            Learn programming with your creativity.
           </p>
         </div>
         <div>

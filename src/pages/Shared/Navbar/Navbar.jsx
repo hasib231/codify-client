@@ -95,7 +95,7 @@ const Navbar = () => {
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-3xl my-text ms-12">
-          Sports Club
+          Codify
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
